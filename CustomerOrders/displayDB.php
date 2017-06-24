@@ -2,7 +2,7 @@
 $value=$_GET['id'];
 
 
-$dboject=mysqli_connect("db-mysql.zenit","int322_162a27","qeHW2354","int322_162a27") or die ("could not connect".mysqli_error($dboject));
+$dboject=mysqli_connect("server","user","pass","user") or die ("could not connect".mysqli_error($dboject));
 
 $sql_query = "update  form set Day1='Not Attending',Day2='Not Attending' where id = '$value'";
 //Debug echo $sql_query;
