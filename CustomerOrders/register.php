@@ -75,7 +75,7 @@ if($valid && $_POST)
 
 
 
-$dboject=mysqli_connect("db-mysql.zenit","int322_162a27","qeHW2354","int322_162a27") or die ("could not connect".mysqli_error($dboject));
+$dboject=mysqli_connect("server","user","pass","user") or die ("could not connect".mysqli_error($dboject));
 
 $sql_query = 'INSERT INTO form set Title="' . $ti . '",FirstName=" '.$fi .'",LastName="'.$ls .'",Organization="' .$or .'",Email="' .$em .'",PhoneNumber="' .$ph .'",Day1="' .$mon .'",Day2="' .$tue .'",Shirt="' .$st .'"';
 
