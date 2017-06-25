@@ -1,0 +1,43 @@
+<?php
+
+//Menu function prints the menu image,title,header
+function menu($title){
+
+$output = "
+    <head>
+        <title>$title</title>
+        <link rel='stylesheet' href='assignx.css' type='text/css'/> <!-- External Style Sheet -->
+    </head>
+
+    <center><img src='headimage.png' align='middle' alt='These Pictures are Public Domain under - https://www.flickr.com/photos/133768082@N04/27749818316/' title='ArtPicture'></center>
+    <h1>Welcome to Elizabeth's Art Shoppe</h1>
+
+    <nav>
+        <ul>
+            <li><a href='http://zenit.senecac.on.ca/~int322_162a27/assign1/add.php'>Add</a></li>
+            <li><a href='http://zenit.senecac.on.ca/~int322_162a27/assign1/view.php'>View All</a></li>
+        </ul>
+    </nav>";
+
+echo $output;
+}
+
+//This function simply connects to a database to enter valid form data into the database
+function addToDB($nameT,$descriptionT,$supplyCodeT,$costT,$priceT,$onHandT,$rePointT,$backOrderT){
+
+//Connect to the database
+$secret = file('/home/int322_162a27/secret/topsecret.txt');
+$dbobject = mysqli_connect(trim($secret[0]),trim($secret[1]),trim($secret[2]),trim($secret[3])) or die ("could not connect".mysqli_error($dbobject));
+
+//create sql query to insert data
+$sql_query = 'INSERT INTO inventory set itemName="' . $nameT . '",description="' . $descriptionT . '",supplierCode="' . $supplyCodeT . '",cost="' . $costT . '",price="' .$priceT . '",onHand="' . $onHandT . '",reorderPoint="' . $rePointT . '",backOrder="' . $backOrderT . '"';
+
+//Run our sql query
+$result = mysqli_query($dbobject, $sql_query) or die('query failed'. mysqli_error($dbobject));
+
+//Redirect to view.php
+header("Refresh: 2; url=http://zenit.senecac.on.ca/~int322_162a27/assign1/view.php");
+echo "Information Submitted to Database, Redirecting...";
+}
+
+?>
