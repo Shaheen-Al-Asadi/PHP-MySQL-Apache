@@ -1,21 +1,5 @@
 <?php
-
-//PLACING STUDENT DECLARATION HERE - OTHERWISE CAUSES A HEADER TO BE SENT
-
 /*
-INT322 Section A
-Shaheen Al-Asadi
-June 20th 2016
-
-Student Declaration
-
-I/we declare that the attached assignment is my/our own work in accordance with Seneca Academic Policy.
-No part of this assignment has been copied manually or electronically from any other source (including web sites) or distributed to other students.
-
-Name Shaheen Al-Asadi
-
-Student ID 013-090-154
-
 Assignment Document Statement: Add.php is used to display the initial webpage and a form to submit data towards view.php,
 to document a fictional business inventory. Delete.php is used to change a flag in a DB record.
 */
