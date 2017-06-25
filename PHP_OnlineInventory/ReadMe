@@ -1,0 +1,1 @@
+Script that takes form data and processes it to maintain an inventory, redirects to a view page where client can delete or restore DB records using a dynamically created link
